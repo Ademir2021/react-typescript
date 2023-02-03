@@ -1,15 +1,16 @@
 import './App.css';
-import { PersonForm } from './components/forms/personForm';
-import { UserForm } from './components/forms/userForm';
+import { UserForm } from './components/forms/userForm/index';
+import { SetUsers } from './components/others/index';
+
 function App() {
 //Code...
 
   return (
     <div>
       <UserForm/>
-      <PersonForm/>
+      <SetUsers/>
     </div>
-  );
+  )
 }
 
 export default App;

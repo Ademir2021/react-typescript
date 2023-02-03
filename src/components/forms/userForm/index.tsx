@@ -1,12 +1,10 @@
-import { useState, useSyncExternalStore } from 'react';
-//import ReactDOM from 'react-dom/client';
+import { useState } from 'react';
 import '../../forms/index.css'
 import axios from 'axios';
 const url = "http://localhost:3000/users";
 
-let user:any
-
 export function UserForm() {
+  
   const [user, setUsers] = useState({
     name:"Ademir Souza de Almeida",
     username:'centroserra@gmail.com',
@@ -21,23 +19,13 @@ export function UserForm() {
   function handleUser () {
     axios.post(url, user)
     .then(response =>{
-        console.log(response.data)
+        //response.data
       }).catch(error => console.log(error));
     };
-
-  async function getUser(){
-     await axios.get(url)
-    .then(response =>{
-       const users =  response.data
-       //console.log(users)
-       return users
-    })
-    .catch(error =>console.log(error))
-};getUser()
-  
+    
   const handleSubmit = (event:any) => {
   event.preventDefault();
-    handleUser()
+  handleUser()  
   }
 
   return (
@@ -74,6 +62,7 @@ export function UserForm() {
         <p>Seu Nome: {user.name}</p>
         <p>Seu Email: {user.username}</p>
         <p>Sua Senha: {user.password}</p>
+        <p></p>
     </div>
     </fieldset>
   )
