@@ -1,24 +1,40 @@
 import { useState, useEffect } from "react";
-import axios from 'axios'
+import axios from 'axios';
 const url = "http://localhost:3000/users";
 
 export function SetUsers() {
 
-const [users, setUsers] = useState([]);
+  const [users, setUser] = useState([]);
 
-  useEffect(() => {
-    axios.get(url)
-    .then(response => {
-      const _users = response.data
-      let users:any  = (_users)
-      setUsers(users)
-    })
-  })
+  const getUser = async () => {
+    try {
+   const response = await  axios.get(url)
+   const users = response.data
+   setUser(users)
+   console.log(users)
+  }catch(error) {
+        console.log("ops! ocorreu um erro");
+      }
+  }
+
+  useEffect(()=>{
+    getUser()
+  }, []);
 
   return(
     <>
-  <p>================================</p>
-  <p>List: {users}</p>
-  </>
+  <div>Últimos Users</div>
+  {users.length === 0 ? <p>Carregando...</p> :(
+    users.map((user: any)=>(
+      <ul key={user.id}>
+      <li>{user.id}</li>
+      <li>{user.created_at}</li>
+      <li>{user.name}</li>
+      <li>{user.username}</li>
+      <li>{user.password}</li>
+      <li>22</li>
+      </ul>
+      )))}
+    </>
   )
 }
