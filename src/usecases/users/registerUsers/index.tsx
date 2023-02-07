@@ -1,20 +1,38 @@
 import { useState } from 'react';
-import '../../forms/index.css'
+import '../index.css'
 import axios from 'axios';
 const url = "http://localhost:3000/users";
 
 export function UserForm() {
   
+  type User = {
+    name:string;
+    username:string;
+    password:string;
+  }
+
   const [user, setUsers] = useState({
-    name:"Ademir Souza de Almeida",
-    username:'centroserra@gmail.com',
-    password:'123abc'});
-    
+    name:"",
+    username:"",
+    password:""});
+
   const handleChange = (event:any) => {
   const name = event.target.name;
   const value = event.target.value;
     setUsers(values => ({...values, [name]: value}))
   }
+
+  function valFields(user:User){
+    let msg = ''
+    if(user.name == ''){msg += '- Digite o seu Nome Completo !! -\n'};
+    if(user.username == ''){msg += '- Digite um email válido !! -\n'};
+    if(user.password == ''){msg += "- Digite sua Senha !! -\n"};
+    if(msg != ''){
+        alert(msg);
+        return false;
+    };
+        return true;
+};
 
   function handleUser () {
     axios.post(url, user)
@@ -25,10 +43,14 @@ export function UserForm() {
     
   const handleSubmit = (event:any) => {
   event.preventDefault();
-  handleUser()  
+  if(user.name && user.username && user.password != ""){
+    handleUser()
+}else{
+  valFields(user)}
   }
 
   return (
+   
     <fieldset>
         <legend>Registro de Usuários :</legend>
         <form onSubmit={handleSubmit}>
@@ -62,7 +84,6 @@ export function UserForm() {
         <p>Seu Nome: {user.name}</p>
         <p>Seu Email: {user.username}</p>
         <p>Sua Senha: {user.password}</p>
-        <p></p>
     </div>
     </fieldset>
   )

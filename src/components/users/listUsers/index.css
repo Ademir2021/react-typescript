@@ -1,0 +1,33 @@
+li {
+    list-style-type: none;
+  }
+.id{
+    font-family: 'Arial';
+    color:blue;
+    font-size: 18px;
+    padding: 5px;
+}
+.create{
+    font-family: 'Arial';
+    color:blue;
+    font-size: 12px;
+    padding: 3px;
+}
+.name{
+    font-family: 'Arial';
+    color:blue;
+    font-size: 12px;
+    padding: 3px;
+}
+.username{
+    font-family: 'Arial';
+    color:blue;
+    font-size: 12px;
+    padding: 3px;
+}
+.password{
+    font-family: 'Arial';
+    color:blue;
+    font-size: 12px;
+    padding: 3px;
+}

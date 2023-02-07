@@ -1,6 +1,7 @@
 import './App.css';
-import { UserForm } from './components/forms/userForm/index';
-import { SetUsers } from './components/others/index';
+import { UserForm } from './usecases/users/registerUsers/index';
+import { SetUsers } from './usecases/users/listUSers/index';
+
 
 function App() {
 //Code...
