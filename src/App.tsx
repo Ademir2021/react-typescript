@@ -1,6 +1,6 @@
 import './App.css';
 import { UserForm } from './usecases/users/registerUsers/index';
-import { SetUsers } from './usecases/users/listUSers/index';
+import { SetUsers } from './usecases/users/listUSers';
 import { SetSales } from './usecases/sales/listSales';
 
 
