@@ -1,7 +1,7 @@
 import './index.css'
 
 export function ListUSers(props:any){
-    let num:number = 0
+
     return (
     <>
     <ul>

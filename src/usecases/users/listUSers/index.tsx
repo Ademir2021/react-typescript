@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import { ListUSers } from "../../../components/users/listUsers";
 import { FormatDate } from "../../../components/utils/formatDate";
-const url = "http://localhost:3000/users";
+const url = "http://192.168.1.9:3000/users";
 
 export function SetUsers() {
   const [users, setUser] = useState([]);
@@ -15,7 +15,7 @@ export function SetUsers() {
   }catch(error) {
         console.log("ops! ocorreu um erro");
       }
-  }
+    }
 
   useEffect(()=>{
     getUser()
@@ -23,8 +23,7 @@ export function SetUsers() {
 
   return(
     <>
-    <hr></hr>
-    <div>Lista de Users : </div>
+    <div style={{padding:'12px'}} >Lista de Users !! </div>
   {users.length === 0 ? <p>Carregando...</p> :(
     users.map((user: any)=>(
       <ListUSers

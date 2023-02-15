@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/date-fns": "^2.6.0"
+    "@types/date-fns": "^2.6.0",
+    "@types/typescript": "^2.0.0"
   }
 }
