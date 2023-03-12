@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { FormatDate } from "../../../components/utils/formatDate";
-import { ListSales } from '../../../components/sales';
+import { ListSales } from '../../../components/sales/listSales';
 const url = "http://192.168.1.9:3000/sales";
 
 export function SetSales() {

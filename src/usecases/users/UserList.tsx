@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import { ListUSers } from "../../../components/users/listUsers";
-import { FormatDate } from "../../../components/utils/formatDate";
-const url = "http://192.168.1.9:3000/users";
+import { ListUSers } from "../../components/users/UserList";
+import { FormatDate } from "../../components/utils/formatDate";
+const url = "http://localhost:3000/users";
 
 export function SetUsers() {
   const [users, setUser] = useState([]);

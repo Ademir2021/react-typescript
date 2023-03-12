@@ -1,4 +1,4 @@
-import './index.css'
+import './UserList.css'
 
 export function ListUSers(props:any){
 
